@@ -8,10 +8,10 @@
 
 using namespace std;
 
-const int SIZE_OCTET = 8;           // La taille d'un octet en bits.
-const int BMP_HEADER_SIZE = 54;     // La taille du header d'une image BMP.
-const char STX = 0x02;              // Caractère ASCII de début de text.
-const char ETX = 0x03;              // Caractère ASCII de fin de text.
+const int SIZE_OCTET = 8;           /*!< La taille d'un octet en bits. */
+const int BMP_HEADER_SIZE = 54;     /*!< La taille du header d'une image BMP. */
+const char STX = 0x02;              /*!< Caractère ASCII de début de text. */
+const char ETX = 0x03;              /*!< Caractère ASCII de fin de text. */
 
 int getImageSizeFile(string fileName);
 
