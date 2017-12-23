@@ -77,7 +77,7 @@ int main() {
             }
                 // Entrée non-valide.
             default : {
-                cout << "Aucune entree n'est valide." << endl;
+                cout << "Aucune entree n'est valide. Tapez 1, 2 ou 3." << endl;
                 break;
             }
         }
@@ -242,7 +242,7 @@ string decodeMessage(string fileName) {
         charact = (char) currentCharact.to_ulong();
 
         //Vérifie qu'il ya bien un message codé dans l'image.
-        if (indexImage == BMP_HEADER_SIZE + 1) {
+        if (indexImage == BMP_HEADER_SIZE + SIZE_OCTET) {
             if (charact != STX)
                 return "Aucun message n'est code dans cette image.";
         }
