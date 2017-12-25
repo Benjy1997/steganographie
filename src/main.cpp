@@ -52,7 +52,7 @@ int main() {
                 getline(cin, message);
                 erreur = codeMessage(fileName, message);
                 if (erreur)
-                    cout << "Le fichier n'existe pas.\n";
+                    cout << "L'image est introuvable.\n";
                 else
                     cout << "L'image a ete codee avec succes!\n";
                 sortirBoucle = true;
@@ -116,7 +116,7 @@ int getImageSizeFile(string fileName) {
 
     // Vérifie si le fichier est bien ouvert.
     if (pFile == NULL)
-        return 1;
+        return -1;
 
     // Lit le header.
     unsigned char header[BMP_HEADER_SIZE] = {0};
@@ -278,6 +278,9 @@ bool codeMessage(string fileName, string message) {
 
     int fileSize = 0;
     fileSize = getImageSizeFile(fileName);
+
+    if (fileSize <= 0)
+        return true;
 
     // Vérifie si l'image peut contenir le message que l'on veut coder.
     if ((fileSize - BMP_HEADER_SIZE) < (messageToCode.length() * SIZE_OCTET))
