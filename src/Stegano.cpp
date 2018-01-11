@@ -4,8 +4,8 @@
 
 #include "Stegano.h"
 
-Stegano::Stegano(){
-};
+// Constructeur
+Stegano::Stegano() {};
 
 /**
  * Code le message dans l'image.
@@ -26,7 +26,7 @@ bool Stegano::codeMessage(string fileName, string message) {
     convertMessage(messageToCode, binaryMessage);
 
     int fileSize = 0;
-    fileSize = getImageSizeFile(fileName);
+    fileSize = readImageSizeFile(fileName);
 
     if (fileSize <= 0)
         return true;
@@ -53,7 +53,7 @@ bool Stegano::codeMessage(string fileName, string message) {
  */
 string Stegano::decodeMessage(string fileName) {
 
-    int fileSize = getImageSizeFile(fileName);
+    int fileSize = readImageSizeFile(fileName);
     string message = "";
 
     // Ouvre le fichier en lecture binaire.
@@ -128,7 +128,7 @@ void Stegano::convertMessage(string message, bitset<SIZE_OCTET> binaryMessage[])
  * @param fileName Chemin vers le fichier.
  * @return Taille du fichier.
  */
-int Stegano::getImageSizeFile(string fileName) {
+int Stegano::readImageSizeFile(string fileName) {
 
     // Ouvre le fichier en lecture binaire.
     FILE *pFile;

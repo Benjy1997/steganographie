@@ -2,11 +2,11 @@
 // Date   : 15.11.2017
 // But    : Cache un message dans une image. Stéganographie
 
+#include <iostream>
 #include "Stegano.h"
 
 using namespace std;
 
-//**************************MAIN************************************
 int main() {
 
     string message = "";
@@ -66,7 +66,6 @@ int main() {
     }
     return 0;
 }
-//******************************************************************
 
 
 
